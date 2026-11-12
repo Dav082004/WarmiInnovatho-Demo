@@ -6,8 +6,8 @@ Las personas del equipo tienen las mismas reglas, explicadas paso a paso, en [`C
 ## Proyecto
 
 - Equipo de la **Warmi Innovathon 2026**. Entrega: **domingo 15 de noviembre, 11:59 p. m.** Final: lunes 16.
-- Qué es: **Warmi Mentoras**, un directorio web de mentoras voluntarias para mujeres que empiezan en tecnología. Se filtra por área y por tema. Spec activa: `specs/001-directorio-mentoras/`.
-- Stack: HTML, CSS y JavaScript sin dependencias. La lógica vive en `js/mentoras.js` (se prueba sin navegador) y `js/app.js` solo pinta. Datos en `data/mentoras.json`.
+- Qué es: **Warmi Mentoras**, un sitio para que mujeres que empiezan en tecnología encuentren una mentora voluntaria. Tiene un directorio con filtros (spec `specs/001-directorio-mentoras/`) y *Mi match*, que sugiere hasta 3 mentoras en 3 preguntas y explica por qué (spec `specs/002-mi-match/`). Los RF se numeran de forma continua entre specs (001: RF-1 a RF-7; 002: RF-8 a RF-12).
+- Stack: HTML, CSS y JavaScript sin dependencias. La lógica vive en `js/mentoras.js` y `js/match.js` (se prueban sin navegador); `js/app.js` y `js/vista-match.js` solo pintan. Datos en `data/mentoras.json` y `data/catalogo.json`.
 
 ## Comandos
 
@@ -39,8 +39,10 @@ docs/constitution.md → specs/NNN-nombre/spec.md → plan.md → tasks.md → i
 ## Con el MCP de GitHub
 
 - Antes de crear, editar o cerrar algo en GitHub, **di exactamente qué vas a hacer** y espera confirmación.
-- Los issues nuevos van al tablero del equipo en **Por hacer**. Al empezar uno pasa a **En progreso**; con PR abierto, a **En revisión**; fusionado, a **Hecho**.
+- Los issues nuevos van al tablero del equipo en **Por hacer**, con su etiqueta de **área** (`área: diseño`, `área: frontend`, `área: backend-datos`, `área: pruebas`, `área: despliegue` o `área: docs-pitch`). Un issue es de una sola área: si una tarea toca varias, divídela en un sub-issue por área. Al empezar uno pasa a **En progreso**; con PR abierto, a **En revisión**; fusionado, a **Hecho**.
 - Si dos ramas tocan los mismos archivos, avisa del posible conflicto.
+- **Comandos de Git que borran o reescriben trabajo** (`push --force`, `reset --hard`, `clean -fd`, `restore .`, `rebase`): nunca los ejecutes sin explicar antes qué hacen y esperar confirmación. Si algo sale mal, usa los pasos de `docs/COMANDOS-GIT.md`.
+- Cuando ejecutes un comando de Git, di en una frase qué hace: las personas del equipo están aprendiendo.
 
 ## Código
 

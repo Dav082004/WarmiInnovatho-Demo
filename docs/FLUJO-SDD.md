@@ -23,9 +23,13 @@ Constitución → Spec → Clarificación → Plan → Tareas e issues → Desar
 
 **Lo que es solo del equipo:** dividir el trabajo, mantener el tablero al día, revisar y fusionar los PRs, y defender la idea.
 
+Guías detalladas: [USAR-SPEC.md](USAR-SPEC.md) (fases 0 a 1b), [ISSUES-Y-TABLERO.md](ISSUES-Y-TABLERO.md) (fases 2 a 4) y [EJEMPLO-TAREA.md](EJEMPLO-TAREA.md) (una tarea de punta a punta).
+
 ## Qué decirle al agente en cada fase
 
-Elige el agente en el selector del chat (Copilot en modo Agent, o `Tab` en OpenCode) y escribe:
+Comandos de Git que acompañan cada fase: [COMANDOS-GIT.md](COMANDOS-GIT.md).
+
+Elige el agente en el selector del chat (Copilot en modo Agent, o `/agents` en OpenCode) y escribe:
 
 | Fase | Agente | Mensaje |
 | --- | --- | --- |

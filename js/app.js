@@ -1,5 +1,6 @@
-// Conecta la página con la lógica de mentoras.js.
-import { areasDisponibles, filtrarMentoras, textoContador } from "./mentoras.js";
+// Carga los datos, pinta el directorio (spec 001) y enciende Mi match (spec 002).
+import { areasDisponibles, filtrarMentoras, textoContador, textoDisponibilidad } from "./mentoras.js";
+import { iniciarMatch } from "./vista-match.js";
 
 const selectorArea = document.querySelector("#area");
 const campoTexto = document.querySelector("#texto");
@@ -24,7 +25,7 @@ function crearFila(mentora) {
 
   const encabezado = crearElemento("div", "mentora-encabezado");
   encabezado.append(
-    crearElemento("h2", "mentora-nombre", mentora.nombre),
+    crearElemento("h3", "mentora-nombre", mentora.nombre),
     crearElemento("p", "mentora-area", mentora.area)
   );
 
@@ -38,7 +39,7 @@ function crearFila(mentora) {
     encabezado,
     crearElemento("p", "mentora-presentacion", mentora.presentacion),
     temas,
-    crearElemento("p", "mentora-disponibilidad", `Disponible: ${mentora.disponibilidad}`)
+    crearElemento("p", "mentora-disponibilidad", `Disponible: ${textoDisponibilidad(mentora)}`)
   );
   return fila;
 }
@@ -63,14 +64,23 @@ function llenarAreas() {
   }
 }
 
+async function leerJSON(ruta) {
+  const respuesta = await fetch(ruta);
+  if (!respuesta.ok) throw new Error(`${ruta}: estado ${respuesta.status}`);
+  return respuesta.json();
+}
+
 async function iniciar() {
   contador.textContent = "Cargando mentoras…";
   try {
-    const respuesta = await fetch("data/mentoras.json");
-    if (!respuesta.ok) throw new Error(`Estado ${respuesta.status}`);
-    mentoras = await respuesta.json();
+    const [datos, catalogo] = await Promise.all([
+      leerJSON("data/mentoras.json"),
+      leerJSON("data/catalogo.json"),
+    ]);
+    mentoras = datos;
     llenarAreas();
     pintar();
+    iniciarMatch(mentoras, catalogo);
   } catch (problema) {
     console.error(problema);
     contador.textContent = "";

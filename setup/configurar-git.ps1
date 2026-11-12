@@ -1,4 +1,4 @@
-# Configura Git para trabajar en equipo (Windows).
+﻿# Configura Git para trabajar en equipo (Windows).
 # Uso, desde PowerShell en la carpeta del repo:
 #   powershell -ExecutionPolicy Bypass -File setup\configurar-git.ps1
 

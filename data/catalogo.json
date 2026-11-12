@@ -1,0 +1,17 @@
+{
+  "areas": [
+    { "nombre": "Ciberseguridad", "descripcion": "Proteger a las personas y sus datos" },
+    { "nombre": "Datos", "descripcion": "Encontrar respuestas en los números" },
+    { "nombre": "Desarrollo web", "descripcion": "Construir páginas y aplicaciones" },
+    { "nombre": "Diseño UX", "descripcion": "Que la tecnología sea fácil de usar" },
+    { "nombre": "Gestión de producto", "descripcion": "Organizar equipos y decidir qué construir" }
+  ],
+  "objetivos": [
+    { "id": "primer-paso", "texto": "Dar el primer paso" },
+    { "id": "primer-empleo", "texto": "Conseguir el primer empleo" },
+    { "id": "becas", "texto": "Postular a una beca" },
+    { "id": "portafolio", "texto": "Armar un portafolio" },
+    { "id": "cambio-carrera", "texto": "Cambiar de carrera" },
+    { "id": "entrevistas", "texto": "Preparar entrevistas" }
+  ]
+}

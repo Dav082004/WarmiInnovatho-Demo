@@ -1,6 +1,8 @@
 # Spec 001: Directorio de mentoras
 
-Estado: **aprobada** · RF-1 a RF-6 implementados · RF-7 pendiente (tarea T7)
+Estado: **aprobada** · RF-1 a RF-6 implementados · RF-7 pendiente (tarea T7, para hacer en vivo)
+
+> La spec [002 · Mi match](../002-mi-match/spec.md) construye sobre esta y continúa la numeración desde RF-8.
 
 ## Contexto y objetivo
 

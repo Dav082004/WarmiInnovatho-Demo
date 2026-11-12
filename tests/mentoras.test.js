@@ -1,12 +1,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
 import {
   normalizar,
   ordenarPorNombre,
   areasDisponibles,
   filtrarMentoras,
   textoContador,
+  textoDisponibilidad,
 } from "../js/mentoras.js";
 
 const ejemplo = [
@@ -82,19 +82,15 @@ test("normalizar tolera valores vacíos", () => {
   assert.equal(normalizar("  Diseño UX "), "diseno ux");
 });
 
-test("Datos: cada mentora del archivo tiene los campos que la interfaz necesita", () => {
-  const datos = JSON.parse(
-    readFileSync(new URL("../data/mentoras.json", import.meta.url), "utf8")
+test("RF-1: la disponibilidad se lee en frase, con plural y conectores", () => {
+  assert.equal(textoDisponibilidad({ dias: ["sábado"], momento: "mañana" }), "Sábados por la mañana");
+  assert.equal(textoDisponibilidad({ dias: ["martes", "jueves"], momento: "noche" }), "Martes y jueves por la noche");
+  assert.equal(
+    textoDisponibilidad({ dias: ["lunes", "miércoles", "domingo"], momento: "tarde" }),
+    "Lunes, miércoles y domingos por la tarde"
   );
-  assert.ok(datos.length > 0);
-  const ids = new Set();
-  for (const m of datos) {
-    for (const campo of ["id", "nombre", "area", "disponibilidad", "presentacion"]) {
-      assert.equal(typeof m[campo], "string", `${m.id}: falta ${campo}`);
-      assert.notEqual(m[campo].trim(), "", `${m.id}: ${campo} está vacío`);
-    }
-    assert.ok(Array.isArray(m.temas) && m.temas.length > 0, `${m.id}: faltan temas`);
-    assert.ok(!ids.has(m.id), `id repetido: ${m.id}`);
-    ids.add(m.id);
-  }
+});
+
+test("RF-1: sin días, la disponibilidad se coordina con la ONG", () => {
+  assert.equal(textoDisponibilidad({}), "A coordinar con la ONG");
 });

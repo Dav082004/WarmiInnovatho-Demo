@@ -18,7 +18,7 @@ Con el MCP de GitHub y los archivos:
 - Issues abiertos y en qué columna del tablero están.
 - PRs abiertos sin revisión.
 - Si cada integrante tiene al menos un PR fusionado.
-- README sin [corchetes] por completar, con pasos para ejecutarlo y el enlace a la demo.
+- README sin [corchetes] por completar, con pasos para ejecutarlo y el enlace a la demo. Si el `README.md` todavía es el del kit (habla de "Kit para equipos") y existe `docs/PLANTILLA-README.md`, avisa: falta convertir la plantilla con `git mv -f docs/PLANTILLA-README.md README.md`.
 - Sin secretos ni datos personales reales.
 - La demo desplegada abre y funciona.
 

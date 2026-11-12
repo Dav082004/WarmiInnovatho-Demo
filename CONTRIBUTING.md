@@ -12,6 +12,8 @@ Estas son las reglas del equipo. Son pocas y simples, y la IA también las sigue
 
 ## El flujo, paso a paso
 
+> ¿No recuerdas qué hace un comando o te salió un error de Git? Mira [docs/COMANDOS-GIT.md](docs/COMANDOS-GIT.md): cada comando explicado y qué hacer en cada caso (conflictos, push rechazado, commit equivocado…).
+
 ```
 Issue #12  →  rama 12-formulario-registro  →  commits  →  Pull Request  →  revisión  →  merge a main
 ```

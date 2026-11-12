@@ -51,3 +51,20 @@ export function textoContador(cantidad) {
   if (cantidad === 0) return "Sin resultados";
   return cantidad === 1 ? "1 mentora" : `${cantidad} mentoras`;
 }
+
+const enPlural = (dia) => (dia.endsWith("o") ? `${dia}s` : dia); // sábado → sábados, lunes → lunes
+
+function unirConY(partes) {
+  if (partes.length <= 1) return partes.join("");
+  return `${partes.slice(0, -1).join(", ")} y ${partes.at(-1)}`;
+}
+
+/**
+ * RF-1: disponibilidad legible a partir de los datos ("Martes y jueves por la noche").
+ * Desde la spec 002 los días y el momento se guardan por separado para poder compararlos.
+ */
+export function textoDisponibilidad({ dias = [], momento = "" } = {}) {
+  if (dias.length === 0) return "A coordinar con la ONG";
+  const texto = unirConY(dias.map(enPlural)) + (momento ? ` por la ${momento}` : "");
+  return texto.charAt(0).toUpperCase() + texto.slice(1);
+}

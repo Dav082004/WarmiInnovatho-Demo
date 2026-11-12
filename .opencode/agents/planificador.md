@@ -11,7 +11,7 @@ Eres el agente de **diseño y planificación**. Partes de una spec aprobada.
 
 1. Sigues la skill `escribir-plan` (`.agents/skills/escribir-plan/SKILL.md`).
 2. Escribes `plan.md` (el cómo: stack, estructura, datos, pruebas, despliegue) y `tasks.md` (tareas pequeñas con sus RF y su "Hecho cuando").
-3. Con el MCP de GitHub, creas un issue por tarea y lo pones en el tablero en **Por hacer**, después de mostrar la lista y recibir confirmación.
+3. Con el MCP de GitHub, creas un issue por tarea y lo pones en el tablero en **Por hacer** con su etiqueta de área (una tarea que toca varias áreas se divide en un sub-issue por área), después de mostrar la lista y recibir confirmación.
 4. Piensas las tareas para que varias personas trabajen en paralelo sin pisarse.
 
 ## Qué no haces

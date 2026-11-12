@@ -18,3 +18,18 @@ Cada tarea es un issue del tablero. Los números de issue se anotan al crearlos.
       Hecho cuando: prueba del mensaje (nombre, área y enlace, bien codificado) en verde y el botón abre WhatsApp.
 
 T2, T3 y T4 tocan `js/mentoras.js`, así que conviene hacerlas en orden. T5 y T6 se pueden trabajar en paralelo con ellas.
+
+## Reparto (lo decidió el equipo)
+
+Equipo ficticio, para el ejemplo. La IA no asigna: cada persona se asignó sus issues en la reunión frente al tablero.
+
+| Tarea | Área | Persona |
+| --- | --- | --- |
+| T1 | Despliegue (esqueleto y CI) | Sumaq |
+| T2, T3 | Backend y datos | Lucía |
+| T4 | Backend y datos | Mayu |
+| T5 | Frontend | Ana |
+| T6 | Despliegue | Sumaq |
+| T7 | Varias áreas: se divide en sub-issues **en vivo** en el taller | *por decidir* |
+
+Cómo se divide T7 por áreas, issue por issue: [docs/EJEMPLO-TAREA.md](../../docs/EJEMPLO-TAREA.md). Una funcionalidad entera dividida por áreas: [spec 002](../002-mi-match/tasks.md).

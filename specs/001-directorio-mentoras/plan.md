@@ -14,13 +14,17 @@
 
 | Archivo | Qué hace | RF |
 | --- | --- | --- |
-| `js/mentoras.js` | Lógica pura: normalizar, ordenar, filtrar, contar | RF-1, 2, 3, 4, 6 (y RF-7 cuando se haga) |
+| `js/mentoras.js` | Lógica pura: normalizar, ordenar, filtrar, contar, texto de disponibilidad | RF-1, 2, 3, 4, 6 (y RF-7 cuando se haga) |
 | `js/app.js` | Carga los datos, pinta la lista y escucha los filtros | RF-1, 5, 6 |
 | `index.html`, `css/estilos.css` | Página y estilos | RF-1, 5 y los no funcionales |
 | `data/mentoras.json` | Mentoras ficticias | RF-1 |
 | `tests/mentoras.test.js` | Una prueba o más por RF | todos |
 
 ## Modelo de datos
+
+> **Actualizado por la spec 002.** `disponibilidad` (texto libre) se reemplazó por `dias` y `momento` para poder compararlos, y se sumó `ayudaCon`. El texto que ve la aprendiz lo arma `textoDisponibilidad()`. Detalle en [002-mi-match/plan.md](../002-mi-match/plan.md#modelo-de-datos).
+
+Modelo original de esta spec:
 
 ```json
 {

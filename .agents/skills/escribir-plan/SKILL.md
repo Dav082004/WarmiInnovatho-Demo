@@ -32,9 +32,10 @@ Divide el plan en tareas:
 
 Muestra la lista de issues que vas a crear y espera confirmación. Luego, con el MCP de GitHub, por cada tarea:
 
-1. Crea un issue con la estructura de la plantilla **Tarea**: título `[Tarea] T2. Filtro por área`, qué hay que hacer, RF que cumple y `Hecho cuando`.
-2. Agrégalo al tablero del equipo en **Por hacer**.
-3. Anota el número del issue junto a la tarea en `tasks.md`.
+1. Crea un issue con la estructura de la plantilla **Tarea**: título `[Tarea] T2. Filtro por área`, qué hay que hacer, RF que cumple, `Hecho cuando` y su **área**.
+2. **Una tarea que toca varias áreas se divide en un issue por área** (Diseño, Frontend, Backend y datos, Pruebas, Despliegue, Docs y pitch), agrupados como sub-issues de un issue madre. Indica de cuál depende cada uno para que se pueda trabajar en paralelo. Ver `docs/EJEMPLO-TAREA.md`.
+3. Ponle la etiqueta de su área y agrégalo al tablero del equipo en **Por hacer**, completando los campos Área, RF y Tarea.
+4. Anota el número del issue junto a la tarea en `tasks.md`.
 
 **No asignes los issues a nadie.** Repartir el trabajo lo decide el equipo en su reunión.
 

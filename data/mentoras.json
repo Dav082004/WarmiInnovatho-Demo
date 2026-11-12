@@ -4,7 +4,9 @@
     "nombre": "Killa Mamani",
     "area": "Datos",
     "temas": ["Python", "análisis de datos", "primer empleo"],
-    "disponibilidad": "Sábados por la mañana",
+    "ayudaCon": ["primer-paso", "primer-empleo", "cambio-carrera"],
+    "dias": ["sábado"],
+    "momento": "mañana",
     "presentacion": "Empecé en contabilidad y hoy trabajo como analista de datos. Te ayudo a dar el primer paso."
   },
   {
@@ -12,7 +14,9 @@
     "nombre": "Ángela Rojas",
     "area": "Diseño UX",
     "temas": ["Figma", "investigación con usuarias", "portafolio"],
-    "disponibilidad": "Martes y jueves por la noche",
+    "ayudaCon": ["portafolio", "primer-empleo"],
+    "dias": ["martes", "jueves"],
+    "momento": "noche",
     "presentacion": "Diseñadora de producto. Reviso portafolios y te cuento cómo es el día a día en UX."
   },
   {
@@ -20,7 +24,9 @@
     "nombre": "Sumaq Quispe",
     "area": "Desarrollo web",
     "temas": ["HTML y CSS", "JavaScript", "Git y GitHub"],
-    "disponibilidad": "Domingos por la tarde",
+    "ayudaCon": ["primer-paso", "portafolio"],
+    "dias": ["domingo"],
+    "momento": "tarde",
     "presentacion": "Desarrolladora frontend autodidacta. Mi primer sitio lo publiqué en GitHub Pages."
   },
   {
@@ -28,7 +34,9 @@
     "nombre": "Valeria Torres",
     "area": "Desarrollo web",
     "temas": ["React", "accesibilidad", "entrevistas técnicas"],
-    "disponibilidad": "Miércoles por la noche",
+    "ayudaCon": ["entrevistas", "primer-empleo"],
+    "dias": ["miércoles"],
+    "momento": "noche",
     "presentacion": "Ingeniera de software. Practicamos entrevistas y revisamos tu código juntas."
   },
   {
@@ -36,7 +44,9 @@
     "nombre": "Chaska Huamán",
     "area": "Ciberseguridad",
     "temas": ["seguridad básica", "redes", "certificaciones"],
-    "disponibilidad": "Viernes por la tarde",
+    "ayudaCon": ["primer-paso", "primer-empleo"],
+    "dias": ["viernes"],
+    "momento": "tarde",
     "presentacion": "Analista de seguridad. Te oriento sobre por dónde empezar y qué estudiar primero."
   },
   {
@@ -44,7 +54,9 @@
     "nombre": "Lucía Paredes",
     "area": "Datos",
     "temas": ["SQL", "visualización", "becas"],
-    "disponibilidad": "Lunes por la noche",
+    "ayudaCon": ["becas", "primer-paso"],
+    "dias": ["lunes"],
+    "momento": "noche",
     "presentacion": "Científica de datos. Estudié con becas y te cuento cómo postular."
   },
   {
@@ -52,7 +64,9 @@
     "nombre": "Nayra Condori",
     "area": "Gestión de producto",
     "temas": ["liderazgo", "trabajo en equipo", "cambio de carrera"],
-    "disponibilidad": "Sábados por la tarde",
+    "ayudaCon": ["cambio-carrera", "entrevistas"],
+    "dias": ["sábado"],
+    "momento": "tarde",
     "presentacion": "Product manager. Pasé de la docencia a la tecnología a los 30."
   },
   {
@@ -60,7 +74,29 @@
     "nombre": "Inés Cárdenas",
     "area": "Diseño UX",
     "temas": ["redacción UX", "accesibilidad", "primer empleo"],
-    "disponibilidad": "Jueves por la mañana",
+    "ayudaCon": ["portafolio", "primer-empleo"],
+    "dias": ["jueves"],
+    "momento": "mañana",
     "presentacion": "Redactora UX. Te ayudo a explicar tu trabajo con palabras simples."
+  },
+  {
+    "id": "m09",
+    "nombre": "Yolanda Ticona",
+    "area": "Desarrollo web",
+    "temas": ["Python", "backend", "becas"],
+    "ayudaCon": ["becas", "cambio-carrera"],
+    "dias": ["sábado", "domingo"],
+    "momento": "mañana",
+    "presentacion": "Fui la primera de mi familia en ir a la universidad, con beca. Hoy programo servicios web."
+  },
+  {
+    "id": "m10",
+    "nombre": "Micaela Flores",
+    "area": "Ciberseguridad",
+    "temas": ["privacidad", "seguridad en el celular", "becas"],
+    "ayudaCon": ["entrevistas", "becas"],
+    "dias": ["martes"],
+    "momento": "noche",
+    "presentacion": "Consultora en seguridad. Te ayudo a preparar tu primera entrevista técnica."
   }
 ]

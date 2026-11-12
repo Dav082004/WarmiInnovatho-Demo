@@ -1,11 +1,24 @@
 # Guía de inicio (15 minutos)
 
-## 1. Prepara tu computadora
+## 1. Instala las herramientas
 
-- [VS Code](https://code.visualstudio.com/) actualizado (1.101 o superior) con las extensiones GitHub Copilot, GitHub Copilot Chat y GitHub Pull Requests. VS Code te las sugiere al abrir este repo.
-- [Git](https://git-scm.com/).
-- Una cuenta de GitHub con sesión iniciada en VS Code. Si eres estudiante, verifica [GitHub Education](https://education.github.com/) para tener Copilot Student; mientras tanto sirve Copilot Free.
-- Respaldo: [OpenCode](https://opencode.ai/), por si se acaban los tokens de Copilot.
+Necesitas Git, VS Code, Node, GitHub CLI, y un agente (GitHub Copilot, con OpenCode de respaldo). Hay un script que lo instala todo:
+
+```bash
+# Mac o Linux
+bash setup/instalar.sh
+```
+
+```powershell
+# Windows (PowerShell)
+powershell -ExecutionPolicy Bypass -File setup\instalar.ps1
+```
+
+Cuando termine, corre `bash setup/verificar.sh` (o `powershell -ExecutionPolicy Bypass -File setup\verificar.ps1` en Windows): revisa cada herramienta y te dice qué falta y cómo resolverlo.
+
+Los scripts viven en el repo. Si todavía no tienes Git para clonarlo, en GitHub usa **Code → Download ZIP**, descomprime y corre el script desde esa carpeta.
+
+Qué instala, instalación a mano y cómo resolver problemas: [INSTALACION.md](INSTALACION.md). Si eres estudiante, verifica [GitHub Education](https://education.github.com/) para tener Copilot Student; mientras tanto sirve Copilot Free.
 
 Las herramientas son de libre elección. Si tu equipo prefiere otro editor u otro agente, las reglas de `AGENTS.md` y las skills siguen sirviendo.
 
@@ -13,8 +26,11 @@ Las herramientas son de libre elección. Si tu equipo prefiere otro editor u otr
 
 1. En el repositorio plantilla, botón **Use this template** → **Create a new repository**. Que sea **público**. (También pueden hacer un fork.)
 2. **Settings → Collaborators** → invita al resto del equipo.
-3. Crea el tablero: pestaña **Projects** → **New project** → plantilla **Board**. Columnas: *Por hacer*, *En progreso*, *En revisión* y *Hecho*. Vincúlalo al repo.
-4. Recomendado: **Settings → Branches** → protege `main` para exigir pull request con una aprobación.
+3. Pon el README del equipo en lugar del README del kit: `git mv -f docs/PLANTILLA-README.md README.md`, commit y push. Lo irán completando con lo que salga de la spec. Un ejemplo terminado: [el README de la demo](https://github.com/Dav082004/WarmiInnovatho-Demo#readme).
+4. Crea las etiquetas (`setup/crear-etiquetas`) y el tablero, siguiendo [ISSUES-Y-TABLERO.md](ISSUES-Y-TABLERO.md).
+5. Recomendado: **Settings → Branches** → protege `main` para exigir pull request con una aprobación.
+
+Cada paso, con su documentación oficial, está en la [Parte 2 del README del kit](https://github.com/Dav082004/WarmiInnovathon-#parte-2--crea-el-repo-del-equipo-una-persona).
 
 ## 3. Clona y configura Git (todas)
 
@@ -39,6 +55,8 @@ Te pide tu nombre y tu correo de GitHub, y deja `main` como rama por defecto.
 
 ## 4. Enciende el agente
 
+El detalle del MCP (y del token para OpenCode) está en [INSTALACION.md](INSTALACION.md#conectar-el-agente-con-github-mcp).
+
 **Con GitHub Copilot en VS Code**
 
 1. Abre la carpeta del repo en VS Code (`code .`).
@@ -50,11 +68,13 @@ Te pide tu nombre y tu correo de GitHub, y deja `main` como rama por defecto.
 
 1. Crea un token en GitHub: **Settings → Developer settings → Personal access tokens** (permisos de repo y project).
 2. Guárdalo en la variable de entorno `GITHUB_TOKEN`. Nunca lo escribas en un archivo del repo.
-3. Ejecuta `opencode` en la carpeta del repo y cambia de agente con `Tab`.
+3. Ejecuta `opencode` en la carpeta del repo y elige el agente con `/agents`.
 
-Los dos leen las mismas reglas (`AGENTS.md`) y las mismas skills (`.agents/skills/`). Si tu agente no detecta las skills, copia esa carpeta a `.github/skills/` (Copilot) o `.opencode/skills/` (OpenCode).
+Los dos leen las mismas reglas (`AGENTS.md`) y las mismas skills (`.agents/skills/`). Copilot y OpenCode leen esa carpeta sin configurar nada.
 
 **Sin MCP** todo se puede hacer igual desde la web de GitHub.
+
+> El MCP trabaja con lo que está en GitHub (issues, PRs, tablero). Lo que pasa en tu computadora (guardar cambios, cambiar de rama, traer lo nuevo) sigue siendo Git. Conoce los comandos y qué hace cada uno en [COMANDOS-GIT.md](COMANDOS-GIT.md).
 
 ## 5. Tu primera vuelta completa
 
@@ -66,7 +86,7 @@ Los dos leen las mismas reglas (`AGENTS.md`) y las mismas skills (`.agents/skill
 6. Una compañera revisa (con ayuda de **QA**) y hace merge.
 7. **Desplegador:** *"Publica la demo."*
 
-El detalle de cada fase está en [FLUJO-SDD.md](FLUJO-SDD.md).
+El detalle de cada fase está en [FLUJO-SDD.md](FLUJO-SDD.md); cómo escribir la spec, en [USAR-SPEC.md](USAR-SPEC.md); issues y tablero, en [ISSUES-Y-TABLERO.md](ISSUES-Y-TABLERO.md); y un ejemplo completo en [EJEMPLO-TAREA.md](EJEMPLO-TAREA.md).
 
 ## Si algo sale mal
 
