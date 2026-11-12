@@ -1,0 +1,28 @@
+# Secretos (nunca se suben)
+.env
+.env.*
+!.env.example
+
+# Dependencias
+node_modules/
+venv/
+.venv/
+__pycache__/
+
+# Builds
+dist/
+build/
+.next/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor (pero sí compartimos la config del MCP)
+.vscode/*
+!.vscode/mcp.json
+!.vscode/extensions.json
+
+# Impeccable (si lo instalan): solo estado temporal
+.impeccable/cache/
+.impeccable/screenshots/

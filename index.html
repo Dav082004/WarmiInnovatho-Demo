@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warmi Mentoras · Encuentra tu mentora en tecnología</title>
+  <meta name="description" content="Directorio de mentoras voluntarias para mujeres que empiezan en tecnología.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#resultados">Saltar a las mentoras</a>
+
+  <header class="cabecera">
+    <p class="marca">Warmi Mentoras</p>
+    <h1>Nadie empieza sola en tecnología.</h1>
+    <p class="bajada">Mentoras voluntarias que ya recorrieron el camino. Elige un área, busca un tema y encuentra a quien pueda orientarte.</p>
+  </header>
+
+  <main>
+    <form class="filtros" id="filtros" role="search" aria-label="Filtrar mentoras">
+      <div class="campo">
+        <label for="area">Área</label>
+        <select id="area" name="area">
+          <option value="">Todas las áreas</option>
+        </select>
+      </div>
+      <div class="campo campo-ancho">
+        <label for="texto">Nombre o tema</label>
+        <input id="texto" name="texto" type="search" placeholder="Por ejemplo: Python, portafolio, becas" autocomplete="off">
+      </div>
+    </form>
+
+    <p class="contador" id="contador" aria-live="polite"></p>
+
+    <ul class="lista" id="resultados" aria-label="Mentoras"></ul>
+
+    <div class="vacio" id="vacio" hidden>
+      <h2>Aún no hay mentoras para esa búsqueda</h2>
+      <p>Prueba con otra área o con un tema más general.</p>
+      <button type="button" id="limpiar">Ver todas las mentoras</button>
+    </div>
+
+    <p class="error" id="error" role="alert" hidden>No pudimos cargar las mentoras. Revisa tu conexión y vuelve a intentarlo.</p>
+  </main>
+
+  <footer class="pie">
+    <p>Demo de la Warmi Innovathon 2026. Las mentoras y sus datos son ficticios.</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

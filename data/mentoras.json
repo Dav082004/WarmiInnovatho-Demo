@@ -1,0 +1,66 @@
+[
+  {
+    "id": "m01",
+    "nombre": "Killa Mamani",
+    "area": "Datos",
+    "temas": ["Python", "análisis de datos", "primer empleo"],
+    "disponibilidad": "Sábados por la mañana",
+    "presentacion": "Empecé en contabilidad y hoy trabajo como analista de datos. Te ayudo a dar el primer paso."
+  },
+  {
+    "id": "m02",
+    "nombre": "Ángela Rojas",
+    "area": "Diseño UX",
+    "temas": ["Figma", "investigación con usuarias", "portafolio"],
+    "disponibilidad": "Martes y jueves por la noche",
+    "presentacion": "Diseñadora de producto. Reviso portafolios y te cuento cómo es el día a día en UX."
+  },
+  {
+    "id": "m03",
+    "nombre": "Sumaq Quispe",
+    "area": "Desarrollo web",
+    "temas": ["HTML y CSS", "JavaScript", "Git y GitHub"],
+    "disponibilidad": "Domingos por la tarde",
+    "presentacion": "Desarrolladora frontend autodidacta. Mi primer sitio lo publiqué en GitHub Pages."
+  },
+  {
+    "id": "m04",
+    "nombre": "Valeria Torres",
+    "area": "Desarrollo web",
+    "temas": ["React", "accesibilidad", "entrevistas técnicas"],
+    "disponibilidad": "Miércoles por la noche",
+    "presentacion": "Ingeniera de software. Practicamos entrevistas y revisamos tu código juntas."
+  },
+  {
+    "id": "m05",
+    "nombre": "Chaska Huamán",
+    "area": "Ciberseguridad",
+    "temas": ["seguridad básica", "redes", "certificaciones"],
+    "disponibilidad": "Viernes por la tarde",
+    "presentacion": "Analista de seguridad. Te oriento sobre por dónde empezar y qué estudiar primero."
+  },
+  {
+    "id": "m06",
+    "nombre": "Lucía Paredes",
+    "area": "Datos",
+    "temas": ["SQL", "visualización", "becas"],
+    "disponibilidad": "Lunes por la noche",
+    "presentacion": "Científica de datos. Estudié con becas y te cuento cómo postular."
+  },
+  {
+    "id": "m07",
+    "nombre": "Nayra Condori",
+    "area": "Gestión de producto",
+    "temas": ["liderazgo", "trabajo en equipo", "cambio de carrera"],
+    "disponibilidad": "Sábados por la tarde",
+    "presentacion": "Product manager. Pasé de la docencia a la tecnología a los 30."
+  },
+  {
+    "id": "m08",
+    "nombre": "Inés Cárdenas",
+    "area": "Diseño UX",
+    "temas": ["redacción UX", "accesibilidad", "primer empleo"],
+    "disponibilidad": "Jueves por la mañana",
+    "presentacion": "Redactora UX. Te ayudo a explicar tu trabajo con palabras simples."
+  }
+]

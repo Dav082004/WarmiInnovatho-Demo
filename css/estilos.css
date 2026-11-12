@@ -1,0 +1,243 @@
+/* Carácter visual: cálido y cercano, como un cuaderno de apuntes entre amigas.
+   Colores: tinta berenjena, magenta de manta andina, ocre y papel crema. */
+:root {
+  --papel: #fbf6ee;
+  --papel-oscuro: #f1e7d8;
+  --tinta: #2b1b2e;
+  --tinta-suave: #5c4a5f;
+  --magenta: #a31d55;
+  --ocre: #e9a23b;
+  --linea: #d9cbb8;
+  --titulos: "Fraunces", Georgia, serif;
+  --texto: "Atkinson Hyperlegible", Verdana, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+.saltar {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--tinta);
+  color: var(--papel);
+  padding: 0.75rem 1rem;
+}
+.saltar:focus {
+  left: 0;
+}
+
+.cabecera,
+main,
+.pie {
+  width: min(100% - 2.5rem, 52rem);
+  margin-inline: auto;
+}
+
+.cabecera {
+  padding-block: 3rem 2rem;
+  border-bottom: 3px solid var(--tinta);
+}
+
+.marca {
+  margin: 0 0 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--magenta);
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--titulos);
+  font-size: clamp(2.4rem, 8vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.bajada {
+  margin: 1.25rem 0 0;
+  max-width: 38rem;
+  font-size: 1.15rem;
+  color: var(--tinta-suave);
+}
+
+.filtros {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-block: 2rem 1rem;
+}
+
+.campo {
+  display: grid;
+  gap: 0.35rem;
+}
+
+label {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+select,
+input[type="search"] {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.6rem 0.8rem;
+  font: inherit;
+  color: var(--tinta);
+  background: #fffdf9;
+  border: 2px solid var(--tinta);
+  border-radius: 4px;
+}
+
+input::placeholder {
+  color: var(--tinta-suave);
+  opacity: 1;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ocre);
+  outline-offset: 2px;
+}
+
+.contador {
+  margin: 0;
+  padding-block: 0.5rem 0.75rem;
+  font-weight: 700;
+  color: var(--magenta);
+  min-height: 2.5rem;
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--linea);
+}
+
+.mentora {
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+.mentora-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.mentora-nombre {
+  margin: 0;
+  font-family: var(--titulos);
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+.mentora-area {
+  margin: 0;
+  font-weight: 700;
+  color: var(--magenta);
+}
+
+.mentora-presentacion {
+  margin: 0.6rem 0 0.9rem;
+  max-width: 40rem;
+}
+
+.temas {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 0.9rem;
+  padding: 0;
+}
+
+.temas li {
+  padding: 0.15rem 0.6rem;
+  background: var(--papel-oscuro);
+  border-left: 3px solid var(--ocre);
+  font-size: 0.95rem;
+}
+
+.mentora-disponibilidad {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--tinta-suave);
+}
+
+.vacio {
+  padding-block: 2.5rem;
+  border-top: 1px solid var(--linea);
+}
+
+.vacio h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--titulos);
+  font-size: 1.6rem;
+}
+
+.vacio p {
+  margin: 0 0 1.25rem;
+  color: var(--tinta-suave);
+}
+
+button {
+  min-height: 3rem;
+  padding: 0.6rem 1.25rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--papel);
+  background: var(--magenta);
+  border: 2px solid var(--magenta);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--tinta);
+  border-color: var(--tinta);
+}
+
+.error {
+  padding: 1rem;
+  border: 2px solid var(--magenta);
+  background: #fffdf9;
+  font-weight: 700;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.pie {
+  padding-block: 2.5rem;
+  font-size: 0.9rem;
+  color: var(--tinta-suave);
+}
+
+@media (min-width: 40rem) {
+  .filtros {
+    grid-template-columns: 14rem 1fr;
+  }
+  .cabecera {
+    padding-block: 4.5rem 2.5rem;
+  }
+}

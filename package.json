@@ -1,0 +1,11 @@
+{
+  "name": "warmi-mentoras",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Demo de la Warmi Innovathon: directorio de mentoras en tecnología",
+  "type": "module",
+  "scripts": {
+    "start": "npx --yes serve .",
+    "test": "node --test"
+  }
+}

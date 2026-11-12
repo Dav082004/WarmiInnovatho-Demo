@@ -1,0 +1,48 @@
+name: 📋 Tarea
+description: Algo que hay que construir o hacer
+title: "[Tarea] "
+labels: ["tarea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Una tarea = un issue = una rama. Si la tarea toma más de unas horas, divídela en varias.
+  - type: textarea
+    id: que
+    attributes:
+      label: ¿Qué hay que hacer?
+      description: Describe la tarea en pocas líneas.
+      placeholder: Crear el formulario de registro con nombre, correo y distrito.
+    validations:
+      required: true
+  - type: input
+    id: rf
+    attributes:
+      label: Requisitos de la spec que cumple
+      description: Los RF de specs/NNN-.../spec.md. Sin RF no hay tarea, primero se actualiza la spec.
+      placeholder: RF-3, RF-4 (tarea T2 de specs/001-.../tasks.md)
+    validations:
+      required: true
+  - type: textarea
+    id: terminado
+    attributes:
+      label: Hecho cuando
+      description: Algo que se pueda comprobar, idealmente una prueba en verde.
+      value: |
+        - [ ]
+        - [ ] Las pruebas pasan
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      options:
+        - Frontend
+        - Backend
+        - Datos
+        - Diseño
+        - Documentación
+        - Pitch / presentación
+    validations:
+      required: false

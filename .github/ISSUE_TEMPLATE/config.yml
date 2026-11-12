@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 Reglas del equipo
+    url: https://docs.github.com/es/issues/tracking-your-work-with-issues/about-issues
+    about: Antes de abrir un issue, revisa CONTRIBUTING.md en este repositorio.
