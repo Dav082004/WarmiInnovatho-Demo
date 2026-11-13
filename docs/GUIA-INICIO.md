@@ -67,7 +67,7 @@ El detalle del MCP (y del token para OpenCode) está en [INSTALACION.md](INSTALA
 **Con OpenCode (respaldo)**
 
 1. Crea un token en GitHub: **Settings → Developer settings → Personal access tokens** (permisos de repo y project).
-2. Guárdalo en la variable de entorno `GITHUB_TOKEN`. Nunca lo escribas en un archivo del repo.
+2. Guárdalo en la variable de entorno `GITHUB_MCP_TOKEN`. Nunca lo escribas en un archivo del repo.
 3. Ejecuta `opencode` en la carpeta del repo y elige el agente con `/agents`.
 
 Los dos leen las mismas reglas (`AGENTS.md`) y las mismas skills (`.agents/skills/`). Copilot y OpenCode leen esa carpeta sin configurar nada.
