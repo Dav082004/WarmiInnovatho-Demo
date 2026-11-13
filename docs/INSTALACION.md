@@ -75,12 +75,43 @@ El MCP es lo que permite que el agente cree issues, mueva tarjetas del tablero y
 3. En el chat de Copilot cambia el modo a **Agent**. Pulsa el icono de herramientas y confirma que aparecen las de GitHub.
 4. Prueba: *"¿Qué issues abiertos hay en este repo?"*
 
+**Configuración global de Copilot (`mcp-config.json`)**
+
+`.vscode/mcp.json` (en el repo) lo usa el chat de Copilot en VS Code; este archivo, `mcp-config.json` (en tu carpeta de usuario), lo usa Copilot en la terminal (Copilot CLI) en cualquier carpeta. Tener los dos no choca.
+
+Hazlo una vez por computadora, desde **tu cuenta principal de Windows** (o tu usuario de Mac/Linux), porque el archivo vive en tu carpeta de usuario y no en el repo.
+
+| Sistema | Ruta del archivo |
+| --- | --- |
+| Windows | `C:\Users\<tu-usuario>\.copilot\mcp-config.json` (`$env:USERPROFILE\.copilot\mcp-config.json`) |
+| Mac o Linux | `~/.copilot/mcp-config.json` |
+
+1. Crea la carpeta y abre el archivo: en Windows, `New-Item -ItemType Directory -Force "$env:USERPROFILE\.copilot"` y luego `notepad "$env:USERPROFILE\.copilot\mcp-config.json"`; en Mac o Linux, `mkdir -p ~/.copilot && code ~/.copilot/mcp-config.json`.
+2. Pega este contenido y guarda (si ya hay otros servidores, agrega solo el bloque `github` dentro de `mcpServers`):
+
+   ```json
+   {
+     "mcpServers": {
+       "github": {
+         "type": "http",
+         "url": "https://api.githubcopilot.com/mcp/",
+         "tools": ["*"]
+       }
+     }
+   }
+   ```
+
+3. Ve a configurarlo: cierra y abre Copilot otra vez, confirma que `github` aparece en la lista de servidores MCP y autoriza con tu cuenta de GitHub.
+
+Nunca pongas un token en este archivo ni lo copies dentro del repo.
+
 **Con OpenCode**
 
 1. En GitHub: **Settings → Developer settings → Personal access tokens**. Crea un token con permisos de `repo` y `project`.
 2. Guárdalo en una variable de entorno, nunca en un archivo del repo:
-   - Windows (PowerShell): `[Environment]::SetEnvironmentVariable("GITHUB_TOKEN", "pega-tu-token", "User")` y abre una terminal nueva.
-   - Mac o Linux: agrega `export GITHUB_TOKEN=pega-tu-token` a `~/.zshrc` o `~/.bashrc`.
+   - Windows (PowerShell): `[Environment]::SetEnvironmentVariable("GITHUB_MCP_TOKEN", "pega-tu-token", "User")` y abre una terminal nueva.
+   - Mac o Linux: agrega `export GITHUB_MCP_TOKEN=pega-tu-token` a `~/.zshrc` o `~/.bashrc`.
+   - **No uses el nombre `GITHUB_TOKEN`**: OpenCode lo toma también para entrar a GitHub Copilot, y Copilot rechaza los tokens personales.
 3. En la carpeta del repo corre `opencode`. La primera vez escribe `/connect` para elegir tu proveedor de modelos (por ejemplo **GitHub Copilot**, que entra con tu cuenta de GitHub).
 4. Elige el agente con `/agents` (o `Shift+Tab` para pasar al siguiente; en la versión 1 es `Tab`).
 5. Revisa que el MCP conectó: `opencode mcp list` en la terminal. Debe aparecer `github`.
@@ -94,8 +125,12 @@ El MCP es lo que permite que el agente cree issues, mueva tarjetas del tablero y
 | `npm install -g` da error de permisos | Mac o Linux: `sudo npm install -g @opencode/cli` |
 | No sé qué me falta | Corre `setup/verificar.sh` o `setup\verificar.ps1`: revisa cada herramienta y te dice el siguiente paso |
 | Las etiquetas salen con letras raras (`Ã¡rea`) | Vuelve a descargar el repo y corre el script otra vez; los `.ps1` deben conservar su codificación UTF-8 con BOM |
-| OpenCode no conecta con GitHub | Revisa que `GITHUB_TOKEN` exista en una terminal **nueva** y que el token tenga permisos de `repo` y `project` |
+| OpenCode no conecta con GitHub | Revisa que `GITHUB_MCP_TOKEN` exista en una terminal **nueva** y que el token tenga permisos de `repo` y `project` |
+| `opencode mcp list` dice `Authorization header is badly formatted` aunque ya creaste la variable | Quedó abierto un proceso de OpenCode de antes. Ciérralo (`Stop-Process -Name opencode -Force` en Windows, `pkill opencode` en Mac o Linux), abre una terminal nueva y vuelve a probar |
+| `opencode mcp list` dice `No MCP servers configured` | Si acabas de abrir OpenCode, todavía está cargando: corre el comando otra vez |
+| `Personal Access Tokens are not supported for this endpoint` | Tienes el token en la variable `GITHUB_TOKEN` y Copilot lo está usando. Bórrala (`[Environment]::SetEnvironmentVariable("GITHUB_TOKEN", $null, "User")`), usa `GITHUB_MCP_TOKEN` y cierra los procesos de OpenCode |
 | VS Code no muestra las herramientas de GitHub | Revisa que `.vscode/mcp.json` esté en la carpeta abierta y pulsa **Start** |
+| Copilot no ve el servidor de `mcp-config.json` | Revisa que el archivo esté en **tu** carpeta de usuario (`$env:USERPROFILE\.copilot\` en Windows, `~/.copilot/` en Mac o Linux), que el JSON sea válido (sin comas de más) y reinicia Copilot |
 | El MCP no ve el tablero de Projects | Cierra sesión y vuelve a entrar para aceptar el permiso de proyectos, o usa el tablero desde la web |
 | Copilot dice que no hay cuota | Pasa a OpenCode, o a Copilot Free |
 

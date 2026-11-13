@@ -10,8 +10,9 @@ La spec es el contrato del equipo: si algo no está aquí, no se construye.
 
 ## Proceso
 
-1. **Lee el contexto.** `docs/constitution.md`, el `README.md` y las specs que ya existan en `specs/`.
+1. **Lee el contexto.** Primero `docs/RETO.md` (si existe): es el problema que plantea la organización y la spec tiene que responder a él. Si todavía tiene [corchetes], pide al equipo que pegue el texto del reto antes de seguir. Después, `docs/constitution.md`, el `README.md` y las specs que ya existan en `specs/`.
 2. **Entrevista.** Haz preguntas de **una en una** (máximo 6) y espera cada respuesta. Prioriza las que cambian lo que hay que construir:
+   - ¿Qué parte del reto atacan? (si el reto es amplio, elegir una parte es la primera decisión)
    - ¿Quién es la usuaria y qué problema concreto tiene hoy?
    - ¿Qué hace distinta a esta idea? (la propuesta de valor que defenderán en el pitch)
    - ¿Qué es lo mínimo que tiene que funcionar en la demo?

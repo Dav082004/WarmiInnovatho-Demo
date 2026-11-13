@@ -20,7 +20,7 @@ if tiene git; then
   [ -n "$(git config --global user.email)" ] && ok "Correo: $(git config --global user.email)" || falta "Tu correo en Git" "bash setup/configurar-git.sh"
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     RAMA="$(git branch --show-current)"
-    [ "$RAMA" = "main" ] && aviso "Estás en main" "Para trabajar crea una rama: git switch -c tipo/numero-descripcion" || ok "Rama actual: $RAMA"
+    [ "$RAMA" = "main" ] && aviso "Estás en main" "Para trabajar crea una rama: git switch -c 12-descripcion-corta (numero del issue + descripcion)" || ok "Rama actual: $RAMA"
   else
     aviso "Esta carpeta no es un repo" "Corre el script dentro de la carpeta del repo"
   fi
@@ -35,7 +35,7 @@ if tiene gh; then
     falta "Sesión en GitHub CLI" "gh auth login"
   fi
 fi
-[ -n "$GITHUB_TOKEN" ] && ok "GITHUB_TOKEN definido (para OpenCode)" || aviso "GITHUB_TOKEN no definido" "Solo hace falta si usas OpenCode con el MCP: mira docs/INSTALACION.md"
+[ -n "$GITHUB_MCP_TOKEN" ] && ok "GITHUB_MCP_TOKEN definido (para OpenCode)" || aviso "GITHUB_MCP_TOKEN no definido" "Solo hace falta si usas OpenCode con el MCP: mira docs/INSTALACION.md"
 
 echo "== Repo =="
 for f in AGENTS.md .vscode/mcp.json opencode.json .agents/skills docs/constitution.md; do

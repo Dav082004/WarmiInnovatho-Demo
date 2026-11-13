@@ -22,7 +22,7 @@ if (Tiene git) {
     if ($correo) { Ok "Correo: $correo" } else { Falta "Tu correo en Git" "powershell -ExecutionPolicy Bypass -File setup\configurar-git.ps1" }
     $rama = git branch --show-current 2>$null
     if ($LASTEXITCODE -ne 0) { Aviso "Esta carpeta no es un repo" "Corre el script dentro de la carpeta del repo" }
-    elseif ($rama -eq "main") { Aviso "Estás en main" "Para trabajar crea una rama: git switch -c tipo/numero-descripcion" }
+    elseif ($rama -eq "main") { Aviso "Estás en main" "Para trabajar crea una rama: git switch -c 12-descripcion-corta (numero del issue + descripcion)" }
     else { Ok "Rama actual: $rama" }
 }
 
@@ -37,8 +37,8 @@ if (Tiene gh) {
         Falta "Sesión en GitHub CLI" "gh auth login"
     }
 }
-if ($env:GITHUB_TOKEN) { Ok "GITHUB_TOKEN definido (para OpenCode)" }
-else { Aviso "GITHUB_TOKEN no definido" "Solo hace falta si usas OpenCode con el MCP: mira docs\INSTALACION.md" }
+if ($env:GITHUB_MCP_TOKEN) { Ok "GITHUB_MCP_TOKEN definido (para OpenCode)" }
+else { Aviso "GITHUB_MCP_TOKEN no definido" "Solo hace falta si usas OpenCode con el MCP: mira docs\INSTALACION.md" }
 
 Write-Host "== Repo =="
 foreach ($f in @("AGENTS.md", ".vscode\mcp.json", "opencode.json", ".agents\skills", "docs\constitution.md")) {
